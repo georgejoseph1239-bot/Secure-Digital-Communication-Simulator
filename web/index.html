@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SecureLink | Digital Communication Simulator
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NORMAL APPLICATION
+     THIS IS WHAT THE USER SEES FIRST
+     ===================================================== -->
+
+<div class="app" id="mainApp">
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                SL
+            </div>
+
+            <div>
+
+                <h1>
+                    SecureLink
+                </h1>
+
+                <span>
+                    Digital Communication
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-item active"
+                data-section="chat"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Secure Chat
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="security"
+            >
+
+                <span class="nav-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Security
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="analysis"
+            >
+
+                <span class="nav-icon">
+                    ≋
+                </span>
+
+                <span>
+                    Analysis
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+
+                <span
+                    class="status-indicator"
+                ></span>
+
+                <div>
+
+                    <strong id="connectionStatus">
+                        Offline
+                    </strong>
+
+                    <small id="networkStatus">
+                        Not connected
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="version">
+                SECURELINK v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="eyebrow">
+                    SECURE DIGITAL COMMUNICATION
+                </span>
+
+                <h2>
+                    Encrypted Communication Simulator
+                </h2>
+
+            </div>
+
+
+            <div class="top-security">
+
+                <span class="online-dot"></span>
+
+                Secure Channel
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             WORKSPACE
+             ================================================= -->
+
+        <section class="workspace">
+
+
+            <!-- =================================================
+                 CHAT SECTION
+                 ================================================= -->
+
+            <section class="chat-section">
+
+
+                <!-- SESSION -->
+
+                <div class="connection-card">
+
+                    <div class="card-title">
+
+                        <div>
+
+                            <span class="section-label">
+                                SESSION
+                            </span>
+
+                            <h3>
+                                Secure Communication
+                            </h3>
+
+                        </div>
+
+                        <span class="lock-symbol">
+                            🔐
+                        </span>
+
+                    </div>
+
+
+                    <div class="connection-fields">
+
+
+                        <div class="field">
+
+                            <label>
+                                YOUR NAME
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Your name"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                CONTACT
+                            </label>
+
+                            <input
+                                type="text"
+                                id="friendName"
+                                placeholder="Friend's name"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="connect-button"
+                            id="connectButton"
+                        >
+                            Start Secure Session
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHAT HEADER -->
+
+                <div class="chat-header">
+
+                    <div class="friend-info">
+
+                        <div class="avatar">
+                            F
+                        </div>
+
+                        <div>
+
+                            <h3 id="chatTitle">
+                                Secure Contact
+                            </h3>
+
+                            <span class="contact-status">
+
+                                <span
+                                    class="contact-dot"
+                                ></span>
+
+                                <span id="chatStatus">
+                                    Waiting for secure connection
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="encryption-badge">
+
+                        <span>
+                            ●
+                        </span>
+
+                        AES-256-GCM
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHAT -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+                    <div class="welcome-card">
+
+                        <div class="welcome-icon">
+                            🔐
+                        </div>
+
+                        <h3>
+                            Secure Communication
+                        </h3>
+
+                        <p>
+                            Establish a secure session
+                            and send a message to see
+                            the complete encryption pipeline.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE INPUT -->
+
+                <div class="message-area">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type a message..."
+                        autocomplete="off"
+                        disabled
+                    >
+
+
+                    <button
+                        class="send-button"
+                        id="sendButton"
+                        disabled
+                    >
+
+                        <span>
+                            Send
+                        </span>
+
+                        <span class="send-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT ANALYSIS PANEL
+                 ================================================= -->
+
+            <aside class="analysis-panel">
+
+
+                <!-- PROFILE -->
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        G
+                    </div>
+
+                    <div>
+
+                        <span class="profile-label">
+                            SESSION
+                        </span>
+
+                        <strong id="displayUsername">
+                            Not connected
+                        </strong>
+
+                        <small>
+                            →
+                            <span id="friendDisplay">
+                                Friend
+                            </span>
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SECURITY -->
+
+                <div
+                    class="security-card"
+                    id="securitySection"
+                >
+
+                    <div class="analysis-card-header">
+
+                        <span>
+                            SECURITY STATUS
+                        </span>
+
+                        <span class="shield">
+                            ◈
+                        </span>
+
+                    </div>
+
+
+                    <div class="security-main">
+
+                        <div class="security-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Protected
+                            </strong>
+
+                            <p id="securityText">
+                                Awaiting connection
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="parameters">
+
+                        <div class="parameter">
+
+                            <span>
+                                ENCRYPTION
+                            </span>
+
+                            <strong id="encryptionValue">
+                                AES-256-GCM
+                            </strong>
+
+                        </div>
+
+
+                        <div class="parameter">
+
+                            <span>
+                                INTEGRITY
+                            </span>
+
+                            <strong id="integrityValue">
+                                Waiting
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIDE TRANSMISSION LOG
+                     ================================================= -->
+
+                <div
+                    class="side-transmission"
+                    id="analysisSection"
+                >
+
+                    <div class="analysis-card-header">
+
+                        <span>
+                            TRANSMISSION LOG
+                        </span>
+
+                        <span
+                            class="live-label"
+                            id="sideTransmissionState"
+                        >
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="side-flow">
+
+
+                        <div class="side-step">
+
+                            <span>
+                                01
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    ORIGINAL MESSAGE
+                                </small>
+
+                                <strong id="sideOriginal">
+                                    Waiting...
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-step">
+
+                            <span>
+                                02
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    ENCRYPTION
+                                </small>
+
+                                <strong>
+                                    AES-256-GCM
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-step">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    REAL CIPHERTEXT
+                                </small>
+
+                                <strong
+                                    class="side-cipher"
+                                    id="sideCipher"
+                                >
+                                    Waiting...
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-step">
+
+                            <span>
+                                04
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    TRANSMISSION
+                                </small>
+
+                                <strong>
+                                    Simulated
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-step">
+
+                            <span>
+                                05
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    AUTHENTICATION
+                                </small>
+
+                                <strong id="sideAuth">
+                                    Waiting...
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-step">
+
+                            <span>
+                                06
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    DECRYPTION
+                                </small>
+
+                                <strong>
+                                    AES-256-GCM
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="side-connector">
+                            ↓
+                        </div>
+
+
+                        <div class="side-result">
+
+                            <small>
+                                FINAL DECRYPTED DATA
+                            </small>
+
+                            <strong id="sideFinal">
+                                Waiting...
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHANNEL ANALYSIS -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-card-header">
+
+                        <span>
+                            CHANNEL ANALYSIS
+                        </span>
+
+                        <span class="analysis-symbol">
+                            ≋
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-grid">
+
+                        <div class="metric">
+
+                            <span>
+                                SNR
+                            </span>
+
+                            <strong id="snrValue">
+                                --
+                            </strong>
+
+                            <small>
+                                dB
+                            </small>
+
+                        </div>
+
+
+                        <div class="metric">
+
+                            <span>
+                                BER
+                            </span>
+
+                            <strong id="berValue">
+                                --
+                            </strong>
+
+                            <small>
+                                bit error rate
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="analysis-note">
+
+                        <span>
+                            ⓘ
+                        </span>
+
+                        <p>
+                            Signal analysis is performed
+                            by the C communication simulator.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+        </section>
+
+
+
+        <footer>
+
+            <span>
+                Secure Digital Communication Simulator
+            </span>
+
+            <span>
+                AES-256-GCM • BPSK • FFT • SNR • BER
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     FULL SCREEN TRANSMISSION OVERLAY
+
+     HIDDEN INITIALLY.
+     APPEARS ONLY AFTER SEND IS CLICKED.
+     ===================================================== -->
+
+<section
+    class="transmission-screen"
+    id="transmissionScreen"
+>
+
+
+    <div class="ambient ambient-one"></div>
+
+    <div class="ambient ambient-two"></div>
+
+
+    <div class="intro-content">
+
+
+        <!-- HEADER -->
+
+        <div class="intro-brand">
+
+            <div class="intro-logo">
+                SL
+            </div>
+
+            <div>
+
+                <h1>
+                    SecureLink
+                </h1>
+
+                <span>
+                    SECURE DIGITAL COMMUNICATION
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="intro-title">
+
+            <span>
+                LIVE TRANSMISSION
+            </span>
+
+            <h2>
+                Secure Communication Pipeline
+            </h2>
+
+            <p>
+                Encrypted data transmission analysis
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FULL SCREEN PIPELINE
+             ================================================= -->
+
+        <div class="hero-pipeline">
+
+
+            <!-- 01 -->
+
+            <div
+                class="hero-step"
+                id="heroOriginal"
+            >
+
+                <div class="hero-number">
+                    01
+                </div>
+
+                <div class="hero-card">
+
+                    <span>
+                        ORIGINAL MESSAGE
+                    </span>
+
+                    <strong
+                        id="heroOriginalData"
+                    >
+                        Waiting...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- 02 -->
+
+            <div
+                class="hero-step"
+                id="heroEncryption"
+            >
+
+                <div class="hero-number">
+                    02
+                </div>
+
+                <div class="hero-card encryption-hero">
+
+                    <span>
+                        ENCRYPTION
+                    </span>
+
+                    <strong>
+                        AES-256-GCM
+                    </strong>
+
+                    <small>
+                        256-bit authenticated encryption
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- 03 -->
+
+            <div
+                class="hero-step"
+                id="heroCipher"
+            >
+
+                <div class="hero-number">
+                    03
+                </div>
+
+                <div class="hero-card cipher-hero">
+
+                    <span>
+                        REAL CIPHERTEXT
+                    </span>
+
+                    <strong
+                        id="heroCipherData"
+                    >
+                        Generating...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- 04 -->
+
+            <div
+                class="hero-step"
+                id="heroTransmission"
+            >
+
+                <div class="hero-number">
+                    04
+                </div>
+
+                <div class="hero-card">
+
+                    <span>
+                        TRANSMISSION
+                    </span>
+
+                    <strong>
+                        SIMULATED TRANSMISSION
+                    </strong>
+
+                    <small>
+                        Encrypted data in transit
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- 05 -->
+
+            <div
+                class="hero-step"
+                id="heroAuthentication"
+            >
+
+                <div class="hero-number">
+                    05
+                </div>
+
+                <div class="hero-card authentication-hero">
+
+                    <span>
+                        AUTHENTICATION
+                    </span>
+
+                    <strong id="heroAuthData">
+                        Verifying...
+                    </strong>
+
+                    <small>
+                        AES-GCM integrity verification
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- 06 -->
+
+            <div
+                class="hero-step"
+                id="heroDecryption"
+            >
+
+                <div class="hero-number">
+                    06
+                </div>
+
+                <div class="hero-card">
+
+                    <span>
+                        DECRYPTION
+                    </span>
+
+                    <strong>
+                        AES-256-GCM
+                    </strong>
+
+                    <small id="heroDecryptData">
+                        Waiting...
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-arrow">
+                ↓
+            </div>
+
+
+            <!-- FINAL -->
+
+            <div
+                class="hero-step hero-final"
+                id="heroFinal"
+            >
+
+                <div class="hero-number final-number">
+                    ✓
+                </div>
+
+                <div class="hero-card final-hero">
+
+                    <span>
+                        FINAL DECRYPTED MESSAGE
+                    </span>
+
+                    <strong
+                        id="heroFinalData"
+                    >
+                        Waiting...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- STATUS -->
+
+        <div
+            class="intro-status"
+            id="introStatus"
+        >
+            READY
+        </div>
+
+
+        <div class="intro-progress">
+
+            <span
+                id="introProgress"
+            ></span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
